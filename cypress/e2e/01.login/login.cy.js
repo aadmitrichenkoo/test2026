@@ -11,8 +11,7 @@ before(() => {
 
 beforeEach(() => {
     cy.visit(`${testData.baseURL}/web/index.php/auth/login`);
-    cy.get('input[name="username"]').should('be.visible');
-    cy.wait(10000);
+    cy.get('input[placeholder="Username"]')
     });
 
 // Тест успешного входа
