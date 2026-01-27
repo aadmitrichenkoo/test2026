@@ -11,11 +11,10 @@ before(() => {
 
 beforeEach(() => {
     cy.visit(`${testData.baseURL}/web/index.php/auth/login`);
-    cy.get('input[placeholder="Username"]')
+    cy.get('input[name="username"]').should('be.visible');
     });
 
 // Тест успешного входа
-
 it ('Успешная авторизация', () => {
     cy.get('input[name="username"]')
         .type(testData.validUser.login);
@@ -25,5 +24,4 @@ it ('Успешная авторизация', () => {
 
     cy.get('button[type="submit"]').click();
 });
-
 })
